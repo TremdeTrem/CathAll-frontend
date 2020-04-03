@@ -11,7 +11,8 @@ export default function Dashboard() {
 
   const user_id = localStorage.getItem('user');
   
-  const socket = useMemo(() => socketio(REACT_APP_API_URL, {
+  const socket = useMemo(() => socketio('https://cathall-backend.herokuapp.com',
+     {
     query: { user_id },
   }), [user_id]);
   
